@@ -25,6 +25,8 @@ public class Buy extends Base {
 		buy_p.Buy_Search();
 		buy_p.Buy_Search_icon();
 		
+		
+		
 	   buy_p.image();
 	}
 
