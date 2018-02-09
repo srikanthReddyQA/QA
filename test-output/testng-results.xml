@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite of Suits" duration-ms="65279" started-at="2018-02-09T04:08:29Z" finished-at="2018-02-09T04:09:34Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="65279" started-at="2018-02-09T04:08:29Z" finished-at="2018-02-09T04:09:34Z">
+      <class name="sri.srikanth.Login_App">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:sri.srikanth.Login_App@4e268090]" name="beforeSuite" is-config="true" duration-ms="160" started-at="2018-02-09T09:38:28Z" finished-at="2018-02-09T09:38:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:sri.srikanth.Login_App@4e268090]" name="beforeMethod" is-config="true" duration-ms="50280" started-at="2018-02-09T09:38:29Z" finished-at="2018-02-09T09:39:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:sri.srikanth.Login_App@4e268090]" name="beforeClass" is-config="true" duration-ms="0" started-at="2018-02-09T09:38:29Z" finished-at="2018-02-09T09:38:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="Login()[pri:0, instance:sri.srikanth.Login_App@4e268090]" name="Login" duration-ms="14434" started-at="2018-02-09T09:39:19Z" finished-at="2018-02-09T09:39:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:sri.srikanth.Login_App@4e268090]" name="afterMethod" is-config="true" duration-ms="563" started-at="2018-02-09T09:39:33Z" finished-at="2018-02-09T09:39:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:sri.srikanth.Login_App@4e268090]" name="afterSuite" is-config="true" duration-ms="600" started-at="2018-02-09T09:39:34Z" finished-at="2018-02-09T09:39:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- sri.srikanth.Login_App -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite of Suits -->
+</testng-results>
