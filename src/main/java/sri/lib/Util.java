@@ -179,17 +179,19 @@ public class Util extends ComnVab {
 		
 	}
 	
-	public HashMap<String,String> elib_loadData(String TestCaseName)
+	public HashMap<String,String> elib_loadData(String TestCaseName,String module)
 	{
+		
 		HashMap<String,String> TestData = new HashMap<String,String>();
 		try
 		{		
+			System.out.println(TestCaseName+module);
 			String FilePath = CommVar_DataFilesPath +"\\Data.xlsx";
 			//File f1 = new File(FilePath);
 			FileInputStream fis = new FileInputStream(FilePath);
 			XSSFWorkbook wb1 = new XSSFWorkbook(fis);
 			
-			XSSFSheet ws1 = wb1.getSheet("sheet1");
+			XSSFSheet ws1 = wb1.getSheet(TestCaseName.trim());
 			
 			int rowcount = ws1.getLastRowNum();
 			for(int r = 0;r<=rowcount;r++)
@@ -197,7 +199,7 @@ public class Util extends ComnVab {
 				if(ws1.getRow(r).getCell(0)!=null)
 				{
 					String Excel_TestCaseName = ws1.getRow(r).getCell(0).getStringCellValue();
-					if(Excel_TestCaseName.equalsIgnoreCase(TestCaseName))
+					if(Excel_TestCaseName.equalsIgnoreCase(module))
 					{
 						int datarow = r + 1;
 						int valuerow = r + 2;
@@ -211,6 +213,8 @@ public class Util extends ComnVab {
 							System.out.println(ExcelFieldName);
 							if(ws1.getRow(valuerow).getCell(c)!=null)
 							ExcelFieldValue = ws1.getRow(valuerow).getCell(c).getStringCellValue();
+							System.out.println(ExcelFieldValue);
+							
 							if(ExcelFieldName.length()>1)
 							TestData.put(ExcelFieldName, ExcelFieldValue);
 						}

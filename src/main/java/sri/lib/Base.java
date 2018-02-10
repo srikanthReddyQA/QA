@@ -3,6 +3,7 @@ package sri.lib;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.lang.reflect.Method;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -59,16 +60,20 @@ public class Base extends Util {
 	}
 
 	@BeforeMethod
-	public void beforeMethod() {
+	public void beforeMethod(Method name) {
 
 		if (CurrentTestData != null) {
 			CurrentTestData.clear();
 		}
 
+		CommVar_CurrentModule =name.getName();
+
+		System.out.println(CommVar_CurrentModule);
+		
 		System.out.println("#################");
 		Current_TestCase_Name = this.getClass().getSimpleName();
 		System.out.println(Current_TestCase_Name);
-		CurrentTestData = elib_loadData(Current_TestCase_Name);
+		CurrentTestData = elib_loadData(Current_TestCase_Name,CommVar_CurrentModule);
 		//System.out.println(CurrentTestData);
 
 		CommVar_test = TestReport.startTest(Current_TestCase_Name);

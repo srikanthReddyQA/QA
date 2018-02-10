@@ -18,6 +18,7 @@ public class ComnVab {
 	protected static ExtentTest CommVar_test;
 	protected static String ScreenshotsFolderPath;
 	protected static String CommVar_DataFilesPath;
+	protected static String CommVar_CurrentModule;
 	protected static HashMap<String,String> CurrentTestData;
 	protected static String CommVar_UserName;
 	protected static String CommVar_Password;
