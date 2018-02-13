@@ -1,44 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="78827" started-at="2018-02-10T07:22:39Z" finished-at="2018-02-10T07:23:58Z">
+  <suite name="Suite" duration-ms="132886" started-at="2018-02-10T07:30:46Z" finished-at="2018-02-10T07:32:59Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="78827" started-at="2018-02-10T07:22:39Z" finished-at="2018-02-10T07:23:58Z">
-      <class name="sri.srikanth.Buy">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:sri.srikanth.Buy@2fd66ad3]" name="beforeSuite" is-config="true" duration-ms="2819" started-at="2018-02-10T12:52:36Z" finished-at="2018-02-10T12:52:39Z">
+    <test name="Test" duration-ms="132886" started-at="2018-02-10T07:30:46Z" finished-at="2018-02-10T07:32:59Z">
+      <class name="sri.writeXML.Writexml">
+        <test-method status="PASS" signature="getTestcases()[pri:1, instance:sri.writeXML.Writexml@78186a70]" name="getTestcases" duration-ms="6281" started-at="2018-02-10T13:00:46Z" finished-at="2018-02-10T13:00:52Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:sri.srikanth.Buy@2fd66ad3]" name="beforeClass" is-config="true" duration-ms="3" started-at="2018-02-10T12:52:39Z" finished-at="2018-02-10T12:52:39Z">
+        </test-method> <!-- getTestcases -->
+        <test-method status="PASS" signature="startWriting()[pri:2, instance:sri.writeXML.Writexml@78186a70]" name="startWriting" duration-ms="595" started-at="2018-02-10T13:00:52Z" finished-at="2018-02-10T13:00:53Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:sri.srikanth.Buy@2fd66ad3]" name="beforeMethod" is-config="true" duration-ms="44076" started-at="2018-02-10T12:52:39Z" finished-at="2018-02-10T12:53:23Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void sri.srikanth.Buy.buy() throws java.io.IOException,java.lang.InterruptedException]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- startWriting -->
+        <test-method status="PASS" signature="runXML()[pri:0, instance:sri.writeXML.Writexml@78186a70]" name="runXML" is-config="true" duration-ms="125766" started-at="2018-02-10T13:00:53Z" finished-at="2018-02-10T13:02:59Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="buy()[pri:0, instance:sri.srikanth.Buy@2fd66ad3]" name="buy" duration-ms="32581" started-at="2018-02-10T12:53:23Z" finished-at="2018-02-10T12:53:56Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- buy -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:sri.srikanth.Buy@2fd66ad3]" name="afterMethod" is-config="true" duration-ms="2103" started-at="2018-02-10T12:53:56Z" finished-at="2018-02-10T12:53:58Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:sri.srikanth.Buy@2fd66ad3]" name="afterSuite" is-config="true" duration-ms="448" started-at="2018-02-10T12:53:58Z" finished-at="2018-02-10T12:53:58Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterSuite -->
-      </class> <!-- sri.srikanth.Buy -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- runXML -->
+      </class> <!-- sri.writeXML.Writexml -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

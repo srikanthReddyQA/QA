@@ -27,7 +27,7 @@ public class BuyPage extends Util {
 	public void Buy_Search() throws IOException {
 
 		status = settext(Buy_Obj.search, getdata("search"));
-		Logevents(status, "enter value", "Un able to enter value");
+		Logevents(status, "click on search icon", "Un able to click on search icon");
 
 	}
 
