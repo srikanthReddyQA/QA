@@ -2,6 +2,7 @@ package sri.lib;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -9,7 +10,8 @@ import java.util.Calendar;
 import java.util.HashMap;
 
 import org.apache.commons.io.FileUtils;
-
+import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
@@ -199,6 +201,7 @@ public class Util extends ComnVab {
 				if(ws1.getRow(r).getCell(0)!=null)
 				{
 					String Excel_TestCaseName = ws1.getRow(r).getCell(0).getStringCellValue();
+					
 					if(Excel_TestCaseName.equalsIgnoreCase(module))
 					{
 						int datarow = r + 1;
@@ -208,15 +211,25 @@ public class Util extends ComnVab {
 						{
 							String ExcelFieldName="";
 							String ExcelFieldValue="";
-							if(ws1.getRow(datarow).getCell(c)!=null)
-							ExcelFieldName = ws1.getRow(datarow).getCell(c).getStringCellValue();
-							System.out.println(ExcelFieldName);
-							if(ws1.getRow(valuerow).getCell(c)!=null)
-							ExcelFieldValue = ws1.getRow(valuerow).getCell(c).getStringCellValue();
-							System.out.println(ExcelFieldValue);
+							if(ws1.getRow(datarow).getCell(c)!=null)	
+							{	
+								
+									DataFormatter formatter = new DataFormatter();
+									ExcelFieldName = formatter.formatCellValue(ws1.getRow(datarow).getCell(c));
+										System.out.println(ExcelFieldName);
+							}
 							
+							if(ws1.getRow(valuerow).getCell(c)!=null) {
+								
+									DataFormatter formatter = new DataFormatter();
+									ExcelFieldValue = formatter.formatCellValue(ws1.getRow(valuerow).getCell(c));
+									System.out.println(ExcelFieldValue);
+									
+							}
 							if(ExcelFieldName.length()>1)
+							{
 							TestData.put(ExcelFieldName, ExcelFieldValue);
+							}
 						}
 						break;
 					}
@@ -232,6 +245,72 @@ public class Util extends ComnVab {
 		}
 		return TestData;
 	}
+	
+	
+	public void elib_UploadData(String TestCaseName,String ModuleName)
+	{
+		try
+		{		
+			String FilePath = CommVar_DataFilesPath + "\\" + ModuleName + ".xlsx";
+			File f1 = new File(FilePath);
+			FileInputStream fis = new FileInputStream(f1);
+			XSSFWorkbook wb1 = new XSSFWorkbook(fis);
+			XSSFSheet ws1 = wb1.getSheet("TestData");
+			int rowcount = ws1.getLastRowNum();
+			for(int r = 0;r<rowcount;r++)
+			{
+				try
+				{
+					if(ws1.getRow(r).getCell(0)!=null)
+					{
+						String Excel_TestCaseName = ws1.getRow(r).getCell(0).getStringCellValue();
+						if(Excel_TestCaseName.equalsIgnoreCase(TestCaseName))
+						{
+							int datarow = r + 1;
+							int valuerow = r + 2;
+							int cellcount = ws1.getRow(datarow).getLastCellNum();
+							for(int c = 0;c<cellcount;c++)
+							{
+								String ExcelFieldName="";
+								if(ws1.getRow(datarow).getCell(c)!=null)
+								ExcelFieldName = ws1.getRow(datarow).getCell(c).getStringCellValue();
+								if(ws1.getRow(valuerow).getCell(c)==null)
+								{
+									ws1.getRow(valuerow).createCell(c);
+								}
+								if(ExcelFieldName.length()>1 && CurrentTestData.containsKey(ExcelFieldName))
+								{
+									ws1.getRow(valuerow).getCell(c).setCellValue(CurrentTestData.get(ExcelFieldName));
+								}
+							}
+						}
+					}
+				}
+				catch(Exception e)
+				{
+					
+				}
+			}
+			fis.close();
+			
+			FileOutputStream fos = new FileOutputStream(f1);
+			wb1.write(fos);
+			
+			fos.close();
+			wb1.close();
+		}
+		catch(Exception e)
+		{
+			System.out.println("Exception occured while writing data of '" + TestCaseName + "'  TestCase and '" + ModuleName + "' Module");
+		}
+	}
+
+
+	
+	
+	
+	
+	
 	
 	
 	

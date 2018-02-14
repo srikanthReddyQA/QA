@@ -86,6 +86,9 @@ public class Base extends Util {
 	@AfterMethod
 	public void afterMethod() {
 		TestReport.endTest(CommVar_test);
+	
+
+	//	elib_UploadData(Current_TestCase_Name, CommVar_CurrentModule);
 		driver.close();
 	}
 

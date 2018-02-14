@@ -45,10 +45,12 @@ public class BuyPage extends Util {
 		System.out.println(element.size());
 		Iterator<WebElement> list=element.iterator();
 		
-		for(int i=0;i<5;i++) {
+		for(int i=0;i<56;i++) {
 			WebElement cc =list.next();
-			String price =cc.getText();
+			String price =cc.getText().trim();
+			String ccc =price.substring(0, 4);
 			System.out.println(price);
+			System.out.println(ccc);
 			
 			
 			 
