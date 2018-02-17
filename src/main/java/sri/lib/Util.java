@@ -63,6 +63,32 @@ public class Util extends ComnVab {
 		return status;
 }
 	
+	public static  boolean displayed(By element) {
+		boolean status ;
+		try {
+			
+			if(	driver.findElement(element).isDisplayed()) {
+				
+				status=true;	
+			}else {
+				status=false;	
+			}
+		}catch(Exception e) {
+			status=false;
+		}
+		
+		return status;
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+	
 	
 	public  WebDriver Lanchbrowser(String browser) {
 		
