@@ -13,6 +13,26 @@
           <include name="beforeMethod"/>
         </methods>
       </class> <!-- sri.srikanth.Buy -->
+      <class name="sri.srikanth.Home">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="afterSuite"/>
+          <include name="beforeClass"/>
+          <include name="beforeSuite"/>
+          <include name="beforeMethod"/>
+          <include name="verifyHomeScreen"/>
+        </methods>
+      </class> <!-- sri.srikanth.Home -->
+      <class name="sri.srikanth.Login_App">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="afterSuite"/>
+          <include name="beforeClass"/>
+          <include name="Login"/>
+          <include name="beforeSuite"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- sri.srikanth.Login_App -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite of Suits] -->

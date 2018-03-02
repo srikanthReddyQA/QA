@@ -3,16 +3,16 @@
 <suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="sri.srikanth.Home">
+      <class name="sri.srikanth.Buy">
         <methods>
           <include name="afterMethod"/>
           <include name="afterSuite"/>
+          <include name="buy"/>
           <include name="beforeClass"/>
           <include name="beforeSuite"/>
           <include name="beforeMethod"/>
-          <include name="verifyHomeScreen"/>
         </methods>
-      </class> <!-- sri.srikanth.Home -->
+      </class> <!-- sri.srikanth.Buy -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

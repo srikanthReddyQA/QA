@@ -8,6 +8,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.ss.usermodel.DataFormatter;
@@ -15,13 +16,14 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
-
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
+import org.testng.annotations.Parameters;
 
 import com.relevantcodes.extentreports.LogStatus;
 
@@ -53,7 +55,7 @@ public class Util extends ComnVab {
 		try {
 			driver.findElement(element).clear();
 			driver.findElement(element).sendKeys(value);
-			//driver.findElement(element).sendKeys(Keys.ENTER);
+		driver.findElement(element).sendKeys(Keys.ENTER);
 			status =true; 
 			
 		}catch(Exception e) {
@@ -89,7 +91,6 @@ public class Util extends ComnVab {
 	
 	
 	
-	
 	public  WebDriver Lanchbrowser(String browser) {
 		
 		
@@ -102,10 +103,14 @@ public class Util extends ComnVab {
 		{
 			System.setProperty("webdriver.chrome.driver", "E:\\Resources\\chromedriver.exe");
 			Tempdriver=new ChromeDriver();
+			//driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 			break;
 		}
 		
 		case "firefox":
+			
+			System.setProperty("webdriver.gecko.driver", "E:\\Resources\\geckodriver.exe");
+			WebDriver driver = new FirefoxDriver();
 			
 			Tempdriver = new FirefoxDriver();
 		{

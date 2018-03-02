@@ -15,13 +15,20 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Parameters;
 
 import com.relevantcodes.extentreports.ExtentReports;
 
 public class Base extends Util {
-	// ComnVab v = new ComnVab();
+	
 
+	
+	 
+	 
+	// ComnVab v = new ComnVab();
+	
 	@BeforeSuite
+	 //@Parameters({"Browser"})
 	public void beforeSuite() {
 
 		Properties prop = new Properties();
@@ -59,8 +66,10 @@ public class Base extends Util {
 
 	}
 
+	
 	@BeforeMethod
-	public void beforeMethod(Method name) {
+
+	public void beforeMethod(Method name ) {
 
 		if (CurrentTestData != null) {
 			CurrentTestData.clear();
@@ -77,9 +86,13 @@ public class Base extends Util {
 		//System.out.println(CurrentTestData);
 
 		CommVar_test = TestReport.startTest(Current_TestCase_Name);
+		
+		
+		
+		
 		driver = Lanchbrowser("chrome");
 		lanchapp("http://rumbleonqa.tracker.bike/");
-		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+		
 
 	}
 

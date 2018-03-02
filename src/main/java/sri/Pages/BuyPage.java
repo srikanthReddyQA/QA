@@ -17,10 +17,19 @@ public class BuyPage extends Util {
 
 	public void Buy() throws IOException, InterruptedException {
 
-		Thread.sleep(3000);
+		Thread.sleep(6000);
 		status = click(Buy_Obj.Buy);
-		Logevents(status, "clicked on Buy", "Un able to click on Buy");
+		//Logevents(status, "clicked on Buy", "Un able to click on Buy");
+		
 
+
+//driver.findElement(By.xpath("//*[@id='enable_scroll']/div[1]/nav/div/ul/li[2]/a")).click();
+
+
+
+		
+
+	
 	}
 	
 

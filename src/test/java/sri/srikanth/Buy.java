@@ -16,14 +16,14 @@ public class Buy extends Base {
 	@Test
 	public void buy() throws IOException, InterruptedException {
 		System.out.println("Srikanth");
-		Login_p.Signin();
+		/*Login_p.Signin();
 		Login_p.Are_you_Acustomer();
 		Login_p.Username();
 		Login_p.Password();
-		Login_p.Login();
+		Login_p.Login();*/
 		buy_p.Buy();
 		buy_p.Buy_Search();
-		buy_p.Buy_Search_icon();
+		//buy_p.Buy_Search_icon();
 		
 		
 		
