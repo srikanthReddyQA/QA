@@ -102,7 +102,7 @@ public class Base extends Util {
 	
 
 	//	elib_UploadData(Current_TestCase_Name, CommVar_CurrentModule);
-		driver.close();
+		//driver.close();
 	}
 
 	@BeforeClass
